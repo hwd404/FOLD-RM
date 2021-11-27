@@ -18,16 +18,16 @@ def main():
     # model, data = voting()
     # model, data = ecoli()
     # model, data = ionosphere()
-    # model, data = wine()
+    model, data = wine()
     # model, data = adult()
     # model, data = credit_card()
     # model, data = rain()
-    model, data = heloc()
+    # model, data = heloc()
 
     data_train, data_test = split_data(data, ratio=0.8)
 
     start = timer()
-    model.fit(data_train, ratio=0.9)
+    model.fit(data_train, ratio=0.5)
     end = timer()
 
     model.print_asp()
@@ -36,7 +36,6 @@ def main():
     print('% acc', round(acc, 4))
     print('% foldrm costs: ', timedelta(seconds=end - start), '\n')
 
-    exit()
     k = 1
     for i in range(len(data_test)):
         print('Explanation for example number', k, ':')

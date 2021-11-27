@@ -61,8 +61,9 @@ def justify_data(frs, x, attrs):
     ret = []
     for r in frs:
         d = r[1]
-        for j in d:
-            ret.append(attrs[j[0]] + ': ' + str(x[j[0]]))
+        if isinstance(d[0], tuple):
+            for j in d:
+                ret.append(attrs[j[0]] + ': ' + str(x[j[0]]))
     return set(ret)
 
 

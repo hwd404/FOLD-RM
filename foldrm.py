@@ -44,4 +44,4 @@ class Classifier:
         expl = decode_rules(pos, self.attrs, x=x)
         for e in expl:
             print(e)
-        print('')
+        print(justify_data(pos, x, attrs=self.attrs), '\n')
