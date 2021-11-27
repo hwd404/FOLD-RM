@@ -3,8 +3,6 @@ from datasets import *
 from timeit import default_timer as timer
 from datetime import timedelta
 
-from algo import justify_one
-
 
 def main():
     # model, data = acute()
