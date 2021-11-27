@@ -267,34 +267,6 @@ def add_constraint(rules):
     return rx + ret + abrules
 
 
-# def justify_one(rs, x, idx=-1, pos=[], start=0):
-#     for j in range(start, len(rs)):
-#         r = rs[j]
-#         i, d, ab = r[0], r[1], r[2]
-#         if idx != -1 and i != idx:
-#             continue
-#         if r not in pos:
-#             pos.append(r)
-#         if not all([evaluate(_j, x) for _j in d]):
-#             continue
-#         if len(ab) > 0 and any([justify_one(rs, x, idx=_j, pos=pos)[0] for _j in ab]):
-#             continue
-#         if r not in pos:
-#             pos.append(r)
-#         if idx == -1:
-#             return i[2], j
-#         else:
-#             return 1, j
-#     if idx < -1:
-#         for r in rs:
-#             if r[0] == idx and r not in pos:
-#                 pos.append(r)
-#     if idx == -1:
-#         return None, -1
-#     else:
-#         return 0, -1
-
-
 def justify(rs, x, idx=-1, pos=[]):
     for j in range(len(rs)):
         r = rs[j]
