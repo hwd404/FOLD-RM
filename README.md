@@ -2,6 +2,21 @@
 The implementation details of FOLD-RM algorithm and how to use it are described here. The target of FOLD-RM algorithm is to learn an answer set program for a classification task. Answer set programs are logic programs that permit negation of predicates and follow the stable model semantics for interpretation. The rules generated are essentially default rules. Default rules (with exceptions) closely model human thinking.
 
 ## Installation
+
+Only function library:
+<code>
+	
+	python3 -m pip install foldrm
+	
+</code>
+
+With the dataset examples:
+<code>
+	
+	git clone https://github.com/hwd404/FOLD-RM.git
+	
+</code>
+
 ### Prerequisites
 The FOLD-RM algorithm is developed with only python3. Numpy is the only dependency:
 
