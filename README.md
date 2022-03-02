@@ -153,3 +153,31 @@ And the generated justification for an instance prediction:
 </code>
 
 In the generated answers, each literal has been tagged with a label. **[T]** means True, **[F]** means False, and **[U]** means unnecessary to evaluate. And the smallest set of features of the instance is listed for each answer.
+
+## Citation
+
+<code>
+	
+	@misc{wang2022foldrm,
+	      title={FOLD-RM: A Scalable and Efficient Inductive Learning Algorithm for Multi-Category Classification of Mixed Data}, 
+	      author={Huaduo Wang and Farhad Shakerin and Gopal Gupta},
+	      year={2022},
+	      eprint={2202.06913},
+	      archivePrefix={arXiv},
+	      primaryClass={cs.LG}
+	}
+	
+</code>
+	
+<code>
+	
+	@misc{wang2021foldr,
+	      title={FOLD-R++: A Scalable Toolset for Automated Inductive Learning of Default Theories from Mixed Data}, 
+	      author={Huaduo Wang and Gopal Gupta},
+	      year={2021},
+	      eprint={2110.07843},
+	      archivePrefix={arXiv},
+	      primaryClass={cs.LG}
+	}
+	
+</code>
