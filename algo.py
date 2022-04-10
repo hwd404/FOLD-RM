@@ -162,10 +162,10 @@ def foldrm(data, ratio=0.5):
         item = most(data)
         data_pos, data_neg = split_data_by_item(data, item)
         rule = learn_rule(data_pos, data_neg, [], ratio)
-        tp = [i for i in range(len(data_pos)) if cover(rule, data_pos[i])]
-        data = [data_pos[i] for i in range(len(data_pos)) if i not in set(tp)] + data_neg
-        if len(tp) == 0:
+        data_fn = [data_pos[i] for i in range(len(data_pos)) if not cover(rule, data_pos[i])]
+        if len(data_fn) == len(data_pos):
             break
+        data = data_fn + data_neg
         rule = item, rule[1], rule[2], rule[3]
         ret.append(rule)
     return ret
@@ -194,10 +194,10 @@ def fold(data_pos, data_neg, used_items=[], ratio=0.5):
     ret = []
     while len(data_pos) > 0:
         rule = learn_rule(data_pos, data_neg, used_items, ratio)
-        tp = [i for i in range(len(data_pos)) if cover(rule, data_pos[i])]
-        data_pos = [data_pos[i] for i in range(len(data_pos)) if i not in set(tp)]
-        if len(tp) == 0:
+        data_fn = [data_pos[i] for i in range(len(data_pos)) if not cover(rule, data_pos[i])]
+        if len(data_pos) == len(data_fn):
             break
+        data_pos = data_fn
         ret.append(rule)
     return ret
 
