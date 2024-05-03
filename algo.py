@@ -165,7 +165,7 @@ def foldrm(data, ratio=0.5):
         data_fn = [data_pos[i] for i in range(len(data_pos)) if not cover(rule, data_pos[i])]
         if len(data_fn) == len(data_pos):
             break
-        data = data_fn + data_neg
+        data = data_fn + [data_neg[i] for i in range(len(data_neg)) if not cover(rule, data_neg[i])]
         rule = item, rule[1], rule[2], rule[3]
         ret.append(rule)
     return ret
