@@ -67,6 +67,10 @@ def predict(rules, data):
 def gain(tp, fn, tn, fp):
     if tp + tn < fp + fn:
         return float('-inf')
+    if tp == 0:
+        # A literal covering no positive example cannot help specialise a rule, yet
+        # it can still win on the negatives it excludes. Never select it.
+        return float('-inf')
     ret = 0
     tot_p, tot_n = float(tp + fp), float(tn + fn)
     tot = float(tot_p + tot_n)

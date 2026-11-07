@@ -28,10 +28,25 @@ def coverage(rules, data):
     return sum(any(algo.cover(r, d) for r in rules) for d in data) / len(data)
 
 
+def test_every_row_is_covered():
+    data = load()
+    rules = algo.foldrm(list(data))
+    assert coverage(rules, data) == 1.0
+
+
 def test_every_class_gets_a_rule():
     data = load()
     rules = algo.foldrm(list(data))
     assert {r[0][2] for r in rules} == {d[-1] for d in data}
+
+
+def test_gain_rejects_literals_covering_no_positives():
+    # tp == 0 but would otherwise score: it excludes 9 of 10 negatives.
+    assert algo.gain(0, 5, 9, 1) == float('-inf')
+
+
+def test_gain_unchanged_when_positives_covered():
+    assert algo.gain(3, 2, 9, 1) > float('-inf')
 
 
 if __name__ == '__main__':
