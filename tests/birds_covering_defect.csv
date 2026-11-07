@@ -1,0 +1,19 @@
+entity_id,family,habitat,migration,primary_lifestyle,body_mass_g,beak_depth_mm,trophic_niche
+circus_cyaneus,Accipitridae,Grassland,migratory,Aerial,392.98,13.0,Vertivore
+milvus_migrans,Accipitridae,Woodland,migratory,Aerial,734.1,17.4,Omnivore
+circaetus_gallicus,Accipitridae,Woodland,migratory,Aerial,1699.12,24.6,Vertivore
+melanocorypha_bimaculata,Alaudidae,Grassland,migratory,Terrestrial,54.1,8.2,Omnivore
+cygnus_olor,Anatidae,Wetland,migratory,Aquatic,10682.04,26.4,Herbivore aquatic
+falco_peregrinus,Falconidae,Grassland,partially_migratory,Aerial,759.95,15.4,Vertivore
+gavia_arctica,Gaviidae,Wetland,migratory,Aquatic,2251.1,14.2,Aquatic predator
+larus_glaucoides,Laridae,Coastal,migratory,Generalist,693.31,15.5,Aquatic predator
+larus_glaucescens,Laridae,Coastal,migratory,Generalist,1056.54,19.7,Aquatic predator
+larus_marinus,Laridae,Coastal,partially_migratory,Terrestrial,1649.71,23.5,Omnivore
+dumetella_carolinensis,Mimidae,Shrubland,migratory,Insessorial,35.3,4.8,Invertivore
+luscinia_luscinia,Muscicapidae,Shrubland,migratory,Generalist,23.8,3.9,Invertivore
+phaethon_aethereus,Phaethontidae,Marine,migratory,Aerial,749.99,20.7,Aquatic predator
+zapornia_parva,Rallidae,Wetland,migratory,Terrestrial,49.7,4.7,Aquatic predator
+xenus_cinereus,Scolopacidae,Grassland,migratory,Terrestrial,78.8,4.5,Aquatic predator
+tringa_brevipes,Scolopacidae,Wetland,migratory,Terrestrial,127.0,5.0,Aquatic predator
+turdus_philomelos,Turdidae,Forest,migratory,Generalist,67.74,5.7,Invertivore
+turdus_torquatus,Turdidae,Shrubland,migratory,Insessorial,109.0,6.6,Omnivore

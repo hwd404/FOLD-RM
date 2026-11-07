@@ -67,6 +67,10 @@ def predict(rules, data):
 def gain(tp, fn, tn, fp):
     if tp + tn < fp + fn:
         return float('-inf')
+    if tp == 0:
+        # A literal covering no positive example cannot help specialise a rule, yet
+        # it can still win on the negatives it excludes. Never select it.
+        return float('-inf')
     ret = 0
     tot_p, tot_n = float(tp + fp), float(tn + fn)
     tot = float(tot_p + tot_n)
@@ -158,13 +162,20 @@ def most(data, i=-1):
 
 def foldrm(data, ratio=0.5):
     ret = []
+    blocked = set()
     while len(data) > 0:
-        item = most(data)
+        candidates = [d for d in data if d[-1] not in blocked]
+        if len(candidates) == 0:
+            break
+        item = most(candidates)
         data_pos, data_neg = split_data_by_item(data, item)
         rule = learn_rule(data_pos, data_neg, [], ratio)
         data_fn = [data_pos[i] for i in range(len(data_pos)) if not cover(rule, data_pos[i])]
         if len(data_fn) == len(data_pos):
-            break
+            # No rule could be learned for this class: skip it instead of abandoning
+            # every class that has not been processed yet.
+            blocked.add(item[2])
+            continue
         data = data_fn + [data_neg[i] for i in range(len(data_neg)) if not cover(rule, data_neg[i])]
         rule = item, rule[1], rule[2], rule[3]
         ret.append(rule)
